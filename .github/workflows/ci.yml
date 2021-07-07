@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [develop]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: set nodejs version
+        uses: actions/setup-node@v1
+        with:
+          node-version: "16"
+      
+      - name: install dependencies
+        run: npm ci
+
+      - name: run tests
+        run: npm test -- --coverage
+        env:
+          CI: true
