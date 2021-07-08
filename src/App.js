@@ -12,6 +12,9 @@ function App() {
         <p>
           Another P Tag!
         </p>
+        <p>
+          Adding one more tag!
+        </p>
         <a
           className="App-link"
           href="https://reactjs.org"
